@@ -363,6 +363,16 @@ function setcloudnetvars
             vlan_sdn=757
             want_ipmi=1
         ;;
+	qa7)
+	nodenumbertotal=7
+	net=192.168.3
+	net_public=10.84.84
+	vlan_public=1215
+	vlan_storage=1217
+	vlan_fixed=1219
+	vlan_sdn=1218
+	want_ipmi=1
+	;;
         virtual)
                     true # defaults are fine (and overridable)
         ;;
