@@ -1213,6 +1213,7 @@ function onadmin_bootstrapcrowbar
                     '--data username=crowbar&password=crowbar' "$crowbar_api_v2_header"
                 safely crowbar_api_request POST $crowbar_init_api /init "" "$crowbar_api_v2_header"
             else
+                sleep 90
                 safely crowbarctl database create
             fi
         fi
