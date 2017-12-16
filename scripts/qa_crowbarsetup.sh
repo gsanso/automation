@@ -1204,7 +1204,7 @@ function onadmin_bootstrapcrowbar
     local upgrademode=$1
     if iscloudver 7plus ; then
         systemctl start crowbar-init
-        wait_for 100 3 "onadmin_is_crowbar_init_api_available" "crowbar init service to start"
+        wait_for 500 3 "onadmin_is_crowbar_init_api_available" "crowbar init service to start"
         if [[ $upgrademode = "with_upgrade" ]] ; then
             safely crowbarctl upgrade database new
         else
