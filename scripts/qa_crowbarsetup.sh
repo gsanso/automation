@@ -1444,7 +1444,7 @@ function reboot_nodes_via_ipmi
         let i++
         local ipmicmd="ipmitool -Ilanplus -H $ip -U $want_ipmi_username"
         local pw
-        or pw in '6w419LtpfmM8' $extraipmipw ; do
+        for pw in '6w419LtpfmM8' $extraipmipw ; do
             if timeout 5 $ipmicmd -P $pw mc info ; then
                 ipmicmd+=" -P $pw"
                 break
