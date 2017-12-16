@@ -35,7 +35,7 @@ fi
 : ${crowbar_networkingmode:=single}
 : ${want_rootpw:=linux}
 : ${want_raidtype:="raid1"}
-: ${want_ipmi_username:=root}
+: ${want_ipmi_username:=pcloud001}
 : ${want_multidnstest:=1}
 : ${want_tempest:=1}
 : ${want_s390:=''}
@@ -1442,15 +1442,15 @@ function reboot_nodes_via_ipmi
     local i=0
     for ip in $ipmi_ip_addrs ; do
         let i++
-        local ipmicmd="ipmitool -H $ip -U $want_ipmi_username"
+        local ipmicmd="ipmitool -Ilanplus -H $ip -U $want_ipmi_username"
         local pw
-        for pw in 'cr0wBar!' $extraipmipw ; do
+        or pw in '6w419LtpfmM8' $extraipmipw ; do
             if timeout 5 $ipmicmd -P $pw mc info ; then
                 ipmicmd+=" -P $pw"
                 break
             fi
         done
-        safely timeout 5 $ipmicmd mc info
+        safely timeout 15 $ipmicmd mc info
 
         if [[ $i -gt $nodenumber ]]; then
             # power off extra nodes
