@@ -256,7 +256,7 @@ function mac_to_nodename
 function setcloudnetvars
 {
     local cloud=$1
-    export cloudfqdn=queprovo.net
+    export cloudfqdn=qeprovo.net
     if [ -z "$cloud" ] ; then
         complain 101 "Parameter missing that defines the cloud name" \
             "Possible values: [p1, d2, p, virtual]" \
