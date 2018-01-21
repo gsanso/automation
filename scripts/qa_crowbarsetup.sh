@@ -1633,6 +1633,7 @@ function onadmin_wait_tftpd
 
 function wait_node_ready
 {
+    sleep 30
     local node=$1
     wait_for 300 10 \
         "crowbar machines show $node state | grep -q '^ready$'" \
@@ -1647,6 +1648,7 @@ function wait_node_ready
 
 function onadmin_waitcloud
 {
+   sleep 30
     pre_hook $FUNCNAME
     local node
     for node in `get_all_discovered_nodes` ; do
