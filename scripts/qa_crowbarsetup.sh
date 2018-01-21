@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # based on https://github.com/SUSE/cloud/wiki/SUSE-Cloud-Installation-Manual
 
 # This has only been tested on aarch64, x86_64 and s390x so far
